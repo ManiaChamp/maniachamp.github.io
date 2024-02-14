@@ -118,7 +118,7 @@
 
       function downloadApp() {
         const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
+        const urlParams = new URLSearchParams("payzapp://reactFullPage?component=HOME&name=KnowYourCard");
 
         const getUrlWithQueryParams = (baseUrl, queryParams) => {
           let finalUrl = baseUrl + "?";
