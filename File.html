@@ -142,12 +142,12 @@
         } else if (browser.isAndroid()) {
           urlParams.set("id", "com.hdfcbank.payzapp");
           url = getUrlWithQueryParams(
-            "payzapp://reactFullPage?component=HOME&name=KnowYourCard"
+            "payzapp://reactFullPage?component=HOME&name=KnowYourCard",
             urlParams
           );
           analyticsData.platform = "android";
         } else {
-          url = "payzapp://reactFullPage?component=HOME&name=KnowYourCard"
+          url = "payzapp://reactFullPage?component=HOME&name=KnowYourCard";
         }
       }
       downloadApp();
