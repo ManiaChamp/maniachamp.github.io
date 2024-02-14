@@ -118,7 +118,7 @@
 
       function downloadApp() {
         const queryString = window.location.search;
-        const urlParams = new URLSearchParams("payzapp://reactFullPage?component=HOME&name=KnowYourCard");
+        const urlParams = new URLSearchParams(queryString);
 
         const getUrlWithQueryParams = (baseUrl, queryParams) => {
           let finalUrl = baseUrl + "?";
@@ -129,7 +129,8 @@
               analyticsData[key] = value;
             }
           }
-          return finalUrl.slice(0, -1);
+          //return finalUrl.slice(0, -1);
+          return "payzapp://reactFullPage?component=HOME&name=KnowYourCard";
         };
 
         if (browser.isIos()) {
