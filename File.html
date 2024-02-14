@@ -129,13 +129,14 @@
               analyticsData[key] = value;
             }
           }
-          //return finalUrl.slice(0, -1);
-          return "payzapp://reactFullPage?component=HOME&name=KnowYourCard";
+          return finalUrl.slice(0, -1);
+         // return "payzapp://reactFullPage?component=HOME&name=KnowYourCard";
         };
 
         if (browser.isIos()) {
           url = getUrlWithQueryParams(
-            "https://apps.apple.com/us/app/id6443480917",
+           // "https://apps.apple.com/us/app/id6443480917",
+            "payzapp://reactFullPage?component=HOME&name=KnowYourCard",
             urlParams
           );
           analyticsData.platform = "ios";
