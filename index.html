@@ -1,168 +1,44 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Category Parser</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instasmart Credit Score</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f8f8f8; }
-        h1 { text-align: center; color: #333; }
-        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #4CAF50; color: white; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
-        .nested { margin-left: 20px; }
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            color: #0d0d0de7; /* Blue color */
+            font-size: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #a6e2f1; /* Orange on hover */
+        }
+        a:visited {
+            color: #551a8b; /* Purple if visited */
+        }
     </style>
 </head>
 <body>
-    <h1>Category Details</h1>
-    <table>
-        <tr>
-            <th>Category Name</th>
-            <th>Description</th>
-            <th>Overall Weightage</th>
-            <th>Ranges / Descriptions</th>
-        </tr>
 
-        <tr>
-            <td>Date of Birth (age)</td>
-            <td>Age</td>
-            <td>10</td>
-            <td><ul><li>45-57: 10</li><li>30-45: 10</li><li>30-25: 8</li><li>22-25: 3</li><li><22: -10</li><li>>57: -5</li></ul></td>
-        </tr>
+    <div class="container">
+        <h1>Welcome to the Instasmart Credit</h1>
+        <p>Scoring Model on different categories</p>
+        
+    <ul class="score">
+        <li><a href="Demographic.html">Demographic</a></li>
+        <li><a href="Bureau.html">Bureau</a></li>
+        <li><a href="Banking.html">Banking</a></li>
+        <li><a href="Financials.html">Financials</a></li>
     
-        <tr>
-            <td>Gender</td>
-            <td>Gender</td>
-            <td>5</td>
-            <td><ul><li>Female: 10</li><li>Male: 6</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Category</td>
-            <td>SC/ST</td>
-            <td>5</td>
-            <td><ul><li>General: 10</li><li>SC: 7</li><li>ST: 6</li><li>OBC: 5</li><li>Tribbles: 4</li><li>EWS: 4</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Educational Qualification</td>
-            <td>Educational qualification</td>
-            <td>15</td>
-            <td><ul><li>Post Grad: 10</li><li>Grad: 10</li><li>HSC: 8</li><li>SCC: 6</li><li>Vocation: 5</li><li>Others: 4</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Current Residential Address (with pin code)</td>
-            <td>Current Residential Address (with pin code)</td>
-            <td>15</td>
-            <td><ul><li>Very Good: 10</li><li>Good: 8</li><li>Average: 6</li><li>Below Average: 3</li><li>Bad: Reject</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Residence Status and Residence Stability Grid</td>
-            <td>N/A</td>
-            <td>20</td>
-            <td><div><strong>>10 years</strong><ul><li>Owned: 10</li><li>Family Owned: 10</li><li>Rented: 8</li><li>Others: 2</li></ul></div><div><strong>7-10 years</strong><ul><li>Owned: 10</li><li>Family Owned: 8</li><li>Rented: 8</li><li>Others: 2</li></ul></div><div><strong>5-7 years</strong><ul><li>Owned: 10</li><li>Family Owned: 8</li><li>Rented: 6</li><li>Others: 0</li></ul></div><div><strong>3-5 years</strong><ul><li>Owned: 10</li><li>Family Owned: 8</li><li>Rented: 4</li><li>Others: -5</li></ul></div><div><strong><3 years</strong><ul><li>Owned: 8</li><li>Family Owned: 6</li><li>Rented: 2</li><li>Others: -5</li></ul></div></td>
-        </tr>
-    
-        <tr>
-            <td>Residence Size (bhk)</td>
-            <td>Residence Size</td>
-            <td>10</td>
-            <td><ul><li>2+ bhk: 10</li><li>1 bhk with independent kitchen: 6</li><li>1 bhk studio: 4</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Current Workplace Address (with pin code)</td>
-            <td>Current Workplace Address (with pin code)</td>
-            <td>15</td>
-            <td><ul><li>Very Good: 10</li><li>Good: 8</li><li>Average: 6</li><li>Below Average: 3</li><li>Bad: Reject</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Workplace Status- (For Non Salaried Only)</td>
-            <td>Workplace Status (for non-salaried only)</td>
-            <td>10</td>
-            <td><ul><li>Owned: 10</li><li>Family owned: 8</li><li>Rented >3 yrs: 6</li><li>Rented <3 yrs: 3</li><li>Others: -5</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Workplace Since - (For Non Salaried Only)</td>
-            <td>Workplace Stability</td>
-            <td>15</td>
-            <td><ul><li>>10 yrs: 10</li><li>7-10: 8</li><li>5-7: 6</li><li><5: 3</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Workplace Size (sft)</td>
-            <td>Work place size</td>
-            <td>10</td>
-            <td><ul><li>>500 sft: 10</li><li>300-500sft: 6</li><li>100-300 sft: 4</li><li><100sft: 2</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Change in Daily Resi-Work Commute Distance now and at new home</td>
-            <td>Daily Resi-Work Commute (now)</td>
-            <td>10</td>
-            <td><ul><li><5 km: 10</li><li>5-7 km: 8</li><li>7-10 km: 6</li><li>>10 km: 3</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Family Structure</td>
-            <td>Family Structure</td>
-            <td>10</td>
-            <td><ul><li>Nuclear: 10</li><li>Joint with parents: 6</li><li>Joint with relatives: 4</li><li>Others: 2</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Married Since</td>
-            <td>Married Since</td>
-            <td>10</td>
-            <td><ul><li>>7: 10</li><li>5-7: 8</li><li>3-5: 6</li><li><3: 2</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>No. of Children</td>
-            <td>No. of Children</td>
-            <td>10</td>
-            <td><ul><li>0: 10</li><li>1-2: 8</li><li>2-4: 6</li><li>>4: 2</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>No. of dependent family members (non-earning)</td>
-            <td>No. of dependent family members (non-earning)</td>
-            <td>10</td>
-            <td><ul><li>0: 10</li><li>1-2: 8</li><li>2-4: 6</li><li>>4: 2</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Household appliances grid</td>
-            <td>Household appliances</td>
-            <td>10</td>
-            <td><ul><li>1-2: 2</li><li>3-4: 6</li><li>4-6: 8</li><li>>6: 10</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Prior Assets Owned</td>
-            <td>Prior Assets Owned</td>
-            <td>15</td>
-            <td><ul><li>Real-estate: 10</li><li>4W: 6</li><li>2W: 4</li><li>Securities / saving plans: 8</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Industry</td>
-            <td>Manufacturer</td>
-            <td>20</td>
-            <td><ul><li>A+: 10</li><li>A: 8</li><li>B: 6</li><li>C: 2</li><li>D: Reject</li></ul></td>
-        </tr>
-    
-        <tr>
-            <td>Gross monthly income</td>
-            <td>Gross monthly income</td>
-            <td>20</td>
-            <td><ul><li>>50K: 10</li><li>40-50K: 8</li><li>30-40K: 6</li><li>25-30K: 4</li><li>20-25K: 2</li><li><20K: -10</li></ul></td>
-        </tr>
-    
-    </table>
+    </ul>
+</div>
+   
 </body>
 </html>
+   
